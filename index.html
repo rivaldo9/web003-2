@@ -113,10 +113,10 @@ body, html {
       
       <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
         <div class="w3-half">
-          <input class="w3-input w3-border w3-hover-light-grey" type="email" placeholder="Email">
+          <input class="w3-input w3-border w3-hover-light-grey" type="email" placeholder="Email" id="email">
         </div>
         <div class="w3-half">
-          <input class="w3-input w3-border w3-hover-light-grey" type="password" placeholder="Senha">
+          <input class="w3-input w3-border w3-hover-light-grey" type="password" placeholder="Senha" id="senha">
         </div>
       </div>
       <a href="perfil.html"><button class="w3-btn w3-section w3-right">LOGIN</button>
@@ -190,14 +190,15 @@ function onClick(element) {
   document.getElementById("modal01").style.display = "block";
 }
 
+function onLogin()
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
     var navbar = document.getElementById("myNavbar");
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-navbar" + " w3-card-2" + " w3-animate-top" + " w3-white";
+        navbar.className = "w3-navbar" + " w3-card-2" + " w3-animate-top" + " w3-transparent";
     } else {
-        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
+        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-transparent", "");
     }
 }
 </script>
