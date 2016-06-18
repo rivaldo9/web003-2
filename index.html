@@ -69,13 +69,13 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-opacity w3-display-container">
   <a href="#about"><div class="w3-display-middle">
-    <span class="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide w3-animate-opacity">THE <span class="w3-hide-small">TERRORIST</span> SITE</span>
+    <span class="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide w3-animate-opacity">THE TERRORIST</span>
   </div></a>
 </div>
 
 <!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64">
-  <h3 class="w3-center" id="about"><br><br>SOBRE NOS</h3>
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">SOBRE NOS</h3>
   <div class="w3-row w3-center">
     <div class="w3-col m4 w3-center">
       <p class="w3-center"><b>Vitoria Heliane</b></p>
@@ -109,17 +109,17 @@ body, html {
 <div class="w3-content w3-container w3-padding-64 w3-center">
 
   <div class="w3-row w3-padding-32 w3-center">
-    <div class="w3-col m9 w3-container w3-section">
+    <div class="w3-col m10 w3-container w3-section">
       
-      <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-        <div class="w3-half">
+      <div class="w3-row-padding" style="margin:0 -16px 8px 25%">
+        <div class="w3-center">
           <input class="w3-input w3-border w3-hover-light-grey" type="email" placeholder="Email" id="email">
         </div>
-        <div class="w3-half">
+        <div class="w3-center">
           <input class="w3-input w3-border w3-hover-light-grey" type="password" placeholder="Senha" id="senha">
         </div>
       </div>
-      <a href="perfil.html"><button class="w3-btn w3-section w3-right">LOGIN</button>
+      <button class="w3-btn w3-section w3-right" onclick="onLogin()">LOGIN</button>
     </div>
   </div>
 </div>
@@ -160,10 +160,9 @@ body, html {
 
  
 <!-- Add Google Maps -->
-<script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
 var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-
+var teste = document.getElementById('email');
 function initialize() {
 var mapProp = {
   center:myCenter,
@@ -190,7 +189,6 @@ function onClick(element) {
   document.getElementById("modal01").style.display = "block";
 }
 
-function onLogin()
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
@@ -200,6 +198,15 @@ function myFunction() {
     } else {
         navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-transparent", "");
     }
+}
+
+function onLogin(){
+	if(document.getElementById("email").value === "exemplo@gmail.com" && 
+		document.getElementById("senha").value === "exemplo"){
+		window.location.href="perfil.html";
+	}else{
+		alert("Email ou senha errados!");
+	}
 }
 </script>
 
